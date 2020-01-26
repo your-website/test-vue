@@ -19,7 +19,7 @@ import { eventEmitter } from '../../../main.js'
     data() {
       return {
         rows: 1,
-        cols: 10,
+        cols: 18,
         stringLength: 0
       }
     },
