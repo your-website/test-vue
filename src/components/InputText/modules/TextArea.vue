@@ -25,18 +25,15 @@ import { eventEmitter } from '../../../main.js'
     },
     methods: {
       changeString: function(event) {
-
-        if (event.target.scrollHeight !== event.target.clientHeight) {
-          this.stringLength = (event.target.value.length / this.rows) - 1;
-          this.rows += 1;
-        }
-
         let valueLength = Math.ceil(this.stringLength * this.rows);
 
         if (event.target.value.length < (valueLength - this.stringLength)) {
           this.rows -= 1;
+        } else if (event.target.scrollHeight !== event.target.clientHeight) {
+          this.stringLength = (event.target.value.length / this.rows) - 1;
+          this.rows += 1;
         }
-
+        
         if (event.target.value.length === 0) {
           this.rows = 1;
         }
